@@ -1,0 +1,12 @@
+{
+  "message": {
+    "role": "user",
+    "text": "Please stage this note and create a follow-up task."
+  },
+  "context": {
+    "channel": "cli",
+    "thread_id": "thread_demo",
+    "user_id": "user_demo"
+  }
+}
+

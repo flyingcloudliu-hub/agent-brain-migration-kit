@@ -1,0 +1,28 @@
+{
+  "active_backend": "candidate",
+  "mode": "shadow",
+  "allowed_actions": [
+    "knowledge_stage",
+    "record_create",
+    "webhook_call",
+    "progress_update"
+  ],
+  "context": {
+    "max_total_chars": 12000,
+    "docs": [
+      {
+        "path": "context/identity.md",
+        "priority": "P0",
+        "max_chars": 2000,
+        "required": false
+      },
+      {
+        "path": "context/tools.md",
+        "priority": "P0",
+        "max_chars": 4000,
+        "required": false
+      }
+    ]
+  }
+}
+
