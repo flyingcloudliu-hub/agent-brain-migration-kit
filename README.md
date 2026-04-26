@@ -8,6 +8,14 @@ Utilities and design notes for migrating an existing long-running agent to a new
 
 个人实例是从 OpenClaw 切到 Hermes。考虑到未来还可能继续替换或升级 brain runtime，我把其中和具体框架无关的部分拆成了通用层。
 
+适用范围举例：
+
+- OpenClaw gateway 保持不变，只把 brain runtime 切到 Hermes
+- 现有飞书 / webhook / CLI 入口继续使用
+- 现有工具执行层继续处理写入、检索、同步等 side effects
+- Hermes 先以 shadow mode 跑同一批输入，再逐步切到 live
+- 如果新 brain 表现不稳定，可以快速回滚到旧 backend
+
 所以这个仓库沉淀的是一套通用方法，而不是我的私人部署：
 
 - 保留现有入口，例如 IM、webhook、CLI
@@ -31,6 +39,15 @@ This project started from a real migration where an existing agent gateway and t
 - keep rollback simple
 
 The goal is to share the generic method and minimal contracts, not the private deployment details of that migration.
+
+Example use case:
+
+- keep an OpenClaw gateway running
+- switch the brain runtime to Hermes
+- keep existing IM / webhook / CLI entry points
+- keep the existing tool executor for side effects
+- run Hermes in shadow mode before moving it to live mode
+- keep rollback to the previous backend simple
 
 ## Scope
 

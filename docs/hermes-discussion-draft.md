@@ -13,6 +13,8 @@ Body:
 
 I recently migrated a long-running personal agent from an OpenClaw-based setup to Hermes while keeping the existing gateway and tool execution layer.
 
+The concrete example is: keep the OpenClaw gateway and existing tool executor, switch the brain runtime to Hermes, run Hermes in shadow mode first, then move it to live mode after basic checks.
+
 The runtime itself worked, but the practical migration path was not obvious for an already-running agent:
 
 - the IM / webhook / CLI gateway already exists
@@ -65,4 +67,3 @@ This proposal does not try to define:
 
 My current guess is that the first contribution should be documentation and contracts, not a large implementation PR.
 ```
-
