@@ -6,7 +6,7 @@ Utilities and design notes for migrating an existing long-running agent to a new
 
 这个项目来自一次真实的个人 Agent 迁移：我已经有一个长期运行的 Agent，有自己的 IM 入口、工具执行层、文档/任务上下文和回滚方式。迁移到 Hermes 这类新 brain runtime 时，我发现官方文档更偏 runtime 本身，对“已有系统如何平滑换脑”这类场景说明不够具体。
 
-个人实例是：Openclaw切到Hermes，考虑到未来随着架构升级可能有新的框架，所以拆了通用层
+个人实例是从 OpenClaw 切到 Hermes。考虑到未来还可能继续替换或升级 brain runtime，我把其中和具体框架无关的部分拆成了通用层。
 
 所以这个仓库沉淀的是一套通用方法，而不是我的私人部署：
 
@@ -56,6 +56,7 @@ This project does not cover:
 ```text
 docs/
   rfc-shadow-to-live.md
+  hermes-discussion-draft.md
   action-contract.md
   context-manifest.md
   troubleshooting.md
